@@ -1,7 +1,9 @@
 # weather-widget
 
 Vue2 web-component weather-widget.
+
 App state implemented via Vue.observable.
+
 Data from api.openweathermap.org.
 
 
@@ -14,6 +16,11 @@ npm install
 ```
 npm run dev
 npm run serve
+```
+
+### Compiles and minifies for web-component
+```
+npm run wc
 ```
 
 ### Compiles and minifies for production
