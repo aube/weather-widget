@@ -6,7 +6,7 @@
     "dev": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "wc": "vue-cli-service build --target wc --inline-vue --name weather-widget ./src/main.js",
+    "wc": "vue-cli-service build --target wc --inline-vue --name weather-widget ./src/wc.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

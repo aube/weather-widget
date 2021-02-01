@@ -7,6 +7,11 @@ App state implemented via Vue.observable.
 Data from api.openweathermap.org.
 
 
+## Example
+
+[demo.html](https://raw.githubusercontent.com/aube/weather-widget/master/dist/demo.html)
+
+
 ## Project setup
 ```
 npm install
@@ -33,3 +38,5 @@ npm run build
 npm run lint
 ```
 
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

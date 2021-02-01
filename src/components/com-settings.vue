@@ -12,7 +12,10 @@
         :index="index"
         :key="city.title"
         class="selected-city-item">
-        <span v-handle class="handle">
+        <span
+          v-if="!city.loading"
+          v-handle
+          class="handle">
           <com-icon :size="28">hamburger</com-icon>
         </span>
 
@@ -48,6 +51,7 @@
 
 import { fetchCity } from '../services/api.service';
 import { SlickList, SlickItem, HandleDirective } from 'vue-slicksort';
+import ComIcon from './com-icon.vue';
 
 import {
     state,
@@ -62,6 +66,7 @@ export default {
   components: {
     SlickList,
     SlickItem,
+    ComIcon,
   },
 
   directives: { handle: HandleDirective },

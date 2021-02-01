@@ -9,7 +9,7 @@
         loading...
     </div>
     <div
-        v-else
+        v-else-if="city.main"
         class="weather">
         <div class="icon">
             <img v-if="weatherIcon" :src="weatherIcon">
@@ -68,8 +68,7 @@ export default {
         text-align: right;
     }
     .celsius:after {
-        content: '°C'
+        content: '°C';
     }
-
 }
 </style>

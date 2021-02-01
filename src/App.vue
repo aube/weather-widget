@@ -22,6 +22,7 @@
 <script>
 import ComCity from './components/com-city.vue';
 import ComSettings from './components/com-settings.vue';
+import ComIcon from './components/com-icon.vue';
 import { fetchWeather } from './services/api.service';
 import { WEATHER_CHECK_INTERVAL } from './config';
 
@@ -31,7 +32,9 @@ import {
 } from './services/state.service';
 
 export default {
-  name: 'App',
+  name: 'WeatherWidget',
+
+  props: ['city'],
 
   data() {
     return {
@@ -42,6 +45,7 @@ export default {
   components: {
     ComCity,
     ComSettings,
+    ComIcon,
   },
 
   computed: {

@@ -3,9 +3,20 @@ import { fetchWeather } from './api.service';
 
 import Vue from 'vue';
 
+const addWeather = function(city) {
+    fetchWeather(city, true).then(weather => {
+        updateCity({
+            ...weather,
+            ...city,
+            loading: false,
+        });
+    });
+}
+
 const getSavedCities = function() {
     let cities = localStorage.getItem(LS_KEY);
     if (!cities) {
+        addWeather(DEFAULT_CITY);
         return [ DEFAULT_CITY ];
     }
     try {
@@ -23,7 +34,7 @@ export const state = Vue.observable({
 export const updateCity = function(city) {
     let idx = state.selectedCities.findIndex(c => c.title === city.title);
     if (idx !== false) {
-        state.selectedCities[idx] = city;
+        state.selectedCities.splice(idx, 1, city);
     }
     saveCities();
 }
@@ -36,13 +47,7 @@ export const addCity = function(city) {
         loading: true,
     }
     state.selectedCities.push(city);
-    fetchWeather(city).then(weather => {
-        updateCity({
-            ...weather,
-            ...city,
-            loading: false,
-        })
-    });
+    addWeather(city);
     saveCities();
 }
 
