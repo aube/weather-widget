@@ -2,7 +2,7 @@
 import { API_KEY } from '../config';
 
 export const fetchWeather = async function({lat, lon}) {
-    let url = 'http://api.openweathermap.org/data/2.5/weather?units=metric&lat=' + lat + '&lon=' + lon + '&appid=' + API_KEY;
+    let url = 'https://api.openweathermap.org/data/2.5/weather?units=metric&lat=' + lat + '&lon=' + lon + '&appid=' + API_KEY;
     let response = await fetch(url);
     if (response.status < 400) {
         let json = await response.json();
@@ -40,7 +40,7 @@ function throttle(fn, to = 200, context = null) {
 }
 
 async function _fetchCity(name) {
-    let url = 'http://api.openweathermap.org/geo/1.0/direct?q=' + name + '&limit=5&appid=' + API_KEY;
+    let url = 'https://api.openweathermap.org/geo/1.0/direct?q=' + name + '&limit=5&appid=' + API_KEY;
     let response = await fetch(url);
     if (response.status < 400) {
         let json = await response.json();
