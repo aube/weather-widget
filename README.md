@@ -9,7 +9,7 @@ Data from api.openweathermap.org.
 
 ## Example
 
-[demo.html](https://raw.githubusercontent.com/aube/weather-widget/master/dist/demo.html)
+[https://aube.github.io/weather-widget/](https://aube.github.io/weather-widget/)
 
 
 ## Project setup
